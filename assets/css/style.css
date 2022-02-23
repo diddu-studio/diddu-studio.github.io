@@ -536,13 +536,12 @@ section {
   transition: all 0.5s;
 }
 #header.header-scrolled {
-  background: rgba(39, 70, 133, 0.8);
+  background: rgba(20, 50, 112, 0.95);
   height: 60px;
 }
 #header .logo h1 {
   font-size: 28px;
   margin: 0;
-  text-align: center;
   padding: 4px 0;
   line-height: 1;
   font-weight: 500;
@@ -844,7 +843,7 @@ section {
 # Footer
 --------------------------------------------------------------*/
 .footer {
-  padding: 5rem 0 2.5rem 0;
+  padding: 1rem 0 2.5rem 0;
 }
 .footer h3 {
   font-size: 18px;
