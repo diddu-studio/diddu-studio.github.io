@@ -239,6 +239,14 @@ section {
   font-size: 2rem;
   font-weight: 300;
 }
+
+.free {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+
 .pricing .popularity {
   text-transform: uppercase;
   font-size: 12px;
