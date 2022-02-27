@@ -28,6 +28,16 @@ a:hover {
   color: #000;
 }
 
+.one{
+  color:#fff;
+  text-decoration: none;
+}
+  
+.one:hover{
+  text-decoration: underline;
+}
+  
+
 h1, h2, h3, h4, h5, h6, .font-heading {
   font-family: "Poppins", sans-serif;
   color: #000;
@@ -40,6 +50,10 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 
 .text-black {
   color: #000 !important;
+}
+
+.text-white {
+  color: #fff !important;
 }
 
 .text-primary {
@@ -65,7 +79,7 @@ section {
 }
 
 .section {
-  padding: 7rem 0;
+  padding: 4rem 0;
 }
 
 .section-heading {
@@ -550,7 +564,7 @@ section {
 #header .logo h1 {
   font-size: 28px;
   margin: 0;
-  padding: 4px 0;
+  padding: 5px 0;
   line-height: 1;
   font-weight: 500;
 }
@@ -562,6 +576,11 @@ section {
   padding: 0;
   margin: 0;
   max-height: 40px;
+}
+
+.language {
+  font-size: 16px; 
+  color: white;
 }
 
 /*--------------------------------------------------------------
@@ -851,18 +870,24 @@ section {
 # Footer
 --------------------------------------------------------------*/
 .footer {
-  padding: 1rem 0 2.5rem 0;
+  background: linear-gradient(to right, #274685 0%, #3db3c5 100%);
+  padding: 2rem 0 2.5rem 0;
 }
 .footer h3 {
-  font-size: 18px;
+  font-size: 22px;
   margin-bottom: 30px;
 }
 .footer ul li {
   margin-bottom: 10px;
 }
 .footer a {
-  color: #000;
+  color: #fff;
 }
+
+.footer p {
+  color: #fff;
+}
+
 .footer .copyright {
   margin-bottom: 0px;
 }
