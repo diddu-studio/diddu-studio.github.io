@@ -1,309 +1,1005 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="id">
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Diddu Studio — Kumpulan aplikasi edukasi gratis untuk anak-anak. Juz Amma, Hijaiyah, Surah Yasin, dan banyak lagi. Tersedia di Google Play." />
+  <meta name="keywords" content="Diddu Studio, Aplikasi Edukasi Gratis, Juz Amma, Hijaiyah, Lagu Anak Islami, Aplikasi Islam Anak" />
+  <title>Diddu Studio — Aplikasi Edukasi Gratis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --emerald: #0d6e4f;
+      --emerald-light: #15a06e;
+      --emerald-pale: #e8f7f1;
+      --gold: #c8922a;
+      --gold-light: #f0b84a;
+      --cream: #faf8f3;
+      --ink: #1a1a1a;
+      --ink-soft: #4a4a4a;
+      --ink-muted: #8a8a8a;
+      --white: #ffffff;
+      --card-shadow: 0 4px 24px rgba(13,110,79,0.10);
+      --card-shadow-hover: 0 12px 40px rgba(13,110,79,0.18);
+    }
 
-  <title>Diddu Studio</title>
-  <meta content="Kumpulan aplikasi edukasi gratis. Untuk mengunduh, kunjungi website ini" name="description">
-  <meta content="Diddu Studio, Aplikasi Edukasi Gratis" name="keywords">
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    html { scroll-behavior: smooth; }
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.3.1/css/flag-icon.min.css" rel="stylesheet"/>
+    /* ── Decorative Background ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 90% -10%, rgba(13,110,79,0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at -10% 80%, rgba(200,146,42,0.06) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KKJCT0T0CN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250,248,243,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(13,110,79,0.12);
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
 
-  gtag('config', 'G-KKJCT0T0CN');
-</script>
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .nav-brand-icon {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--emerald), var(--emerald-light));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Amiri', serif;
+      color: white;
+      font-size: 18px;
+      font-weight: 700;
+      box-shadow: 0 2px 8px rgba(13,110,79,0.3);
+    }
+
+    .nav-brand-text {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -0.3px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink-soft);
+      padding: 6px 14px;
+      border-radius: 20px;
+      transition: all 0.2s;
+    }
+
+    .nav-links a:hover { background: var(--emerald-pale); color: var(--emerald); }
+
+    .lang-toggle {
+      background: var(--emerald) !important;
+      color: white !important;
+      font-weight: 600 !important;
+    }
+
+    .lang-toggle:hover { background: var(--emerald-light) !important; color: white !important; }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      z-index: 1;
+      padding: 90px 5% 70px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--emerald-pale);
+      color: var(--emerald);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+      border: 1px solid rgba(13,110,79,0.2);
+    }
+
+    .hero-badge::before {
+      content: '✦';
+      font-size: 10px;
+    }
+
+    .hero h1 {
+      font-family: 'Amiri', serif;
+      font-size: clamp(2.6rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--emerald);
+    }
+
+    .hero p {
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--ink-soft);
+      margin-bottom: 36px;
+      max-width: 480px;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--emerald), var(--emerald-light));
+      color: white;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: 600;
+      box-shadow: 0 4px 16px rgba(13,110,79,0.35);
+      transition: all 0.25s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(13,110,79,0.4);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--emerald);
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: 600;
+      border: 2px solid var(--emerald);
+      transition: all 0.25s;
+    }
+
+    .btn-secondary:hover { background: var(--emerald-pale); }
+
+    .hero-phones {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 20px;
+      position: relative;
+    }
+
+    .hero-phones::before {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70%;
+      height: 60px;
+      background: radial-gradient(ellipse, rgba(13,110,79,0.15), transparent 70%);
+      filter: blur(20px);
+    }
+
+    .hero-phones img {
+      height: clamp(220px, 28vw, 360px);
+      object-fit: contain;
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.18));
+      transition: transform 0.5s ease;
+    }
+
+    .hero-phones img:first-child {
+      transform: rotate(-6deg) translateY(20px);
+      animation: float1 4s ease-in-out infinite;
+    }
+
+    .hero-phones img:last-child {
+      transform: rotate(4deg) translateY(0px);
+      animation: float2 4s ease-in-out infinite 0.5s;
+    }
+
+    @keyframes float1 {
+      0%, 100% { transform: rotate(-6deg) translateY(20px); }
+      50% { transform: rotate(-6deg) translateY(10px); }
+    }
+
+    @keyframes float2 {
+      0%, 100% { transform: rotate(4deg) translateY(0px); }
+      50% { transform: rotate(4deg) translateY(-10px); }
+    }
+
+    /* ── STATS ── */
+    .stats-strip {
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(135deg, var(--emerald), var(--emerald-light));
+      padding: 32px 5%;
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      text-align: center;
+      color: white;
+    }
+
+    .stat-number {
+      font-family: 'Amiri', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 1;
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      opacity: 0.85;
+      margin-top: 4px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── SECTION HEADER ── */
+    .section-header {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .section-header h2 {
+      font-family: 'Amiri', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -0.4px;
+      line-height: 1.2;
+    }
+
+    .section-header p {
+      font-size: 16px;
+      color: var(--ink-soft);
+      margin-top: 12px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
+    /* ── APPS ── */
+    .apps-section {
+      position: relative;
+      z-index: 1;
+      padding: 80px 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .app-card {
+      background: white;
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: var(--card-shadow);
+      border: 1px solid rgba(13,110,79,0.08);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .app-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--emerald), var(--gold));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .app-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    .app-card:hover::before { transform: scaleX(1); }
+
+    .app-card-top {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .app-icon-wrap {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    }
+
+    .app-icon-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .app-info h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+
+    .app-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: #e8f7f1;
+      color: var(--emerald);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+
+    .app-desc {
+      font-size: 14px;
+      color: var(--ink-soft);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .app-play-btn {
+      display: block;
+    }
+
+    .app-play-btn img {
+      height: 40px;
+      transition: transform 0.2s;
+    }
+
+    .app-play-btn:hover img { transform: scale(1.04); }
+
+    /* ── FEATURES ── */
+    .features-section {
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(180deg, transparent 0%, rgba(13,110,79,0.04) 50%, transparent 100%);
+      padding: 80px 5%;
+    }
+
+    .features-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 28px;
+    }
+
+    .feature-card {
+      background: white;
+      border-radius: 18px;
+      padding: 28px 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      text-align: center;
+      transition: transform 0.25s;
+    }
+
+    .feature-card:hover { transform: translateY(-4px); }
+
+    .feature-icon {
+      width: 54px;
+      height: 54px;
+      background: var(--emerald-pale);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin: 0 auto 16px;
+    }
+
+    .feature-card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    .feature-card p {
+      font-size: 13px;
+      color: var(--ink-soft);
+      line-height: 1.6;
+    }
+
+    /* ── REVIEWS ── */
+    .reviews-section {
+      position: relative;
+      z-index: 1;
+      padding: 80px 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .review-card {
+      background: white;
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: var(--card-shadow);
+      border: 1px solid rgba(13,110,79,0.08);
+      position: relative;
+    }
+
+    .review-stars {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 14px;
+    }
+
+    .review-stars span {
+      color: var(--gold);
+      font-size: 16px;
+    }
+
+    .review-card blockquote {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--ink-soft);
+      font-style: italic;
+      margin-bottom: 20px;
+      padding-left: 16px;
+      border-left: 3px solid var(--emerald-pale);
+    }
+
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .review-author img {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--emerald-pale);
+    }
+
+    .review-author-info strong {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ink);
+      display: block;
+    }
+
+    .review-author-info span {
+      font-size: 12px;
+      color: var(--ink-muted);
+    }
+
+    .review-quote-mark {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      font-family: 'Amiri', serif;
+      font-size: 60px;
+      color: var(--emerald-pale);
+      line-height: 1;
+      user-select: none;
+    }
+
+    /* ── ABOUT ── */
+    .about-section {
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(135deg, var(--emerald) 0%, #0a5440 100%);
+      padding: 80px 5%;
+      overflow: hidden;
+    }
+
+    .about-section::before {
+      content: 'بِسْمِ اللهِ';
+      position: absolute;
+      font-family: 'Amiri', serif;
+      font-size: 160px;
+      color: rgba(255,255,255,0.04);
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    .about-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-inner .section-tag { color: var(--gold-light); }
+
+    .about-inner h2 {
+      font-family: 'Amiri', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 700;
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    .about-inner p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.82);
+      margin-bottom: 16px;
+    }
+
+    .about-links {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+
+    .about-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .about-fb {
+      background: rgba(255,255,255,0.15);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+
+    .about-fb:hover { background: rgba(255,255,255,0.25); }
+
+    /* ── FOOTER ── */
+    footer {
+      position: relative;
+      z-index: 1;
+      background: var(--ink);
+      color: rgba(255,255,255,0.7);
+      padding: 40px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    footer p { font-size: 13px; }
+
+    .footer-nav {
+      background: rgba(20, 20, 20, 0.25);
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-nav a {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      font-size: 13px;
+      transition: color 0.2s;
+    }
+
+    .footer-nav a:hover { color: var(--gold-light); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 50px 5% 40px;
+        text-align: center;
+      }
+
+      .hero p { margin-left: auto; margin-right: auto; }
+      .hero-cta { justify-content: center; }
+
+      .hero-phones {
+        order: -1;
+      }
+
+      .stats-strip { gap: 32px; }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-content { animation: fadeUp 0.7s ease both; }
+    .hero-phones { animation: fadeUp 0.7s 0.2s ease both; }
+    .app-card { animation: fadeUp 0.5s ease both; }
+    .app-card:nth-child(1) { animation-delay: 0.05s; }
+    .app-card:nth-child(2) { animation-delay: 0.1s; }
+    .app-card:nth-child(3) { animation-delay: 0.15s; }
+    .app-card:nth-child(4) { animation-delay: 0.2s; }
+    .app-card:nth-child(5) { animation-delay: 0.25s; }
+    .app-card:nth-child(6) { animation-delay: 0.3s; }
+  </style>
 </head>
-
 <body>
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex">
-    <div class="container">
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="p-2" style="visibility: hidden;"><span class="language">EN&nbsp;</span></a><i class="flag-icon flag-icon-us"></i></div>
-        <div class="p-2">
-          <div class="logo">
-            <h1><a href="index.html">Diddu Studio</a></h1>
-          </div>
-        </div>
-        <div class="p-2">
-          <a class="one" href="en/index.html"><span class="language">EN&nbsp;</span><i class="flag-icon flag-icon-us"></i></a>
-        </div>
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-brand">
+      <div class="nav-brand-icon">د</div>
+      <span class="nav-brand-text">Diddu Studio</span>
+    </a>
+    <div class="nav-links">
+      <a href="privacy.html">Kebijakan Privasi</a>
+      <a href="en/index.html" class="lang-toggle">EN</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">Aplikasi Edukasi</div>
+      <h1>Belajar Islam <em>Menyenangkan</em> untuk Si Kecil</h1>
+      <p>Kumpulan aplikasi edukasi gratis dari Diddu Studio — dirancang khusus untuk membantu anak-anak belajar Juz Amma, Hijaiyah, Surah-surah pilihan, dan lagu Islami dengan cara yang seru dan interaktif.</p>
+      <div class="hero-cta">
+        <a href="#apps" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Lihat Semua Aplikasi
+        </a>
+        <a href="en/index.html" class="btn-secondary">English Version</a>
       </div>
     </div>
-  </header>
-  <!--End Header-->
-  <!-- ======= Hero Section ======= -->
-  <section class="hero-section" id="hero">
-    <div class="wave">
-      <svg width="100%" height="355px" viewBox="0 0 1920 355" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-          <g id="Apple-TV" transform="translate(0.000000, -402.000000)" fill="#FFFFFF">
-            <path d="M0,439.134243 C175.04074,464.89273 327.944386,477.771974 458.710937,477.771974 C654.860765,477.771974 870.645295,442.632362 1205.9828,410.192501 C1429.54114,388.565926 1667.54687,411.092417 1920,477.771974 L1920,757 L1017.15166,757 L0,757 L0,439.134243 Z" id="Path"></path>
-          </g>
-        </g>
-      </svg>
-
+    <div class="hero-phones">
+      <img src="https://diddu.web.id/assets/img/phone_1.png" alt="Screenshot Aplikasi Diddu Studio" />
+      <img src="https://diddu.web.id/assets/img/phone_2.png" alt="Screenshot Aplikasi Diddu Studio" />
     </div>
+  </section>
 
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-12 hero-text-image">
-          <div class="row">
-            <div class="col-lg-8 text-center text-lg-start">
-              <h1 data-aos="fade-right">Aplikasi Edukasi Gratis!</h1>
-              <p class="mb-5" data-aos="fade-right" data-aos-delay="100">Kumpulan aplikasi edukasi dari Diddu Studio. Untuk mengunduh, lihat daftar aplikasi di bawah</p>
-             </div>
-            <div class="col-lg-4 iphone-wrap">
-              <img src="assets/img/phone_1.png" alt="Image" class="phone-1" data-aos="fade-right">
-              <img src="assets/img/phone_2.png" alt="Image" class="phone-2" data-aos="fade-right" data-aos-delay="200">
-            </div>
-          </div>
-        </div>
-      </div>
+  <!-- STATS -->
+  <div class="stats-strip">
+    <div class="stat-item">
+      <span class="stat-number">6+</span>
+      <div class="stat-label">Aplikasi Tersedia</div>
     </div>
+    <div class="stat-item">
+      <span class="stat-number">100%</span>
+      <div class="stat-label">Gratis Diunduh</div>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">2018</span>
+      <div class="stat-label">Berdiri Sejak</div>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">★ 4.8</span>
+      <div class="stat-label">Rating Pengguna</div>
+    </div>
+  </div>
 
-  </section><!-- End Hero -->
-
-  <section class="section" style="padding-top: 10px;">
-    <div class="container">
-      <div class="row justify-content-center text-center">
-        <div class="col-md-7 mb-5">
-          <h2 class="section-heading">Daftar Aplikasi kami</h2>
-        </div>
+  <!-- FEATURES -->
+  <section class="features-section">
+    <div class="features-inner">
+      <div class="section-header">
+        <div class="section-tag">Mengapa Diddu Studio?</div>
+        <h2>Dirancang untuk Tumbuh Kembang Anak</h2>
+        <p>Setiap aplikasi kami dibuat dengan mempertimbangkan keamanan, kenyamanan, dan kesenangan belajar anak.</p>
       </div>
-      <div class="row align-items-stretch">
-
-        <div class="col-lg-4 mb-4 mb-lg-4">
-          <div class="pricing h-100 text-center">
-            <h3>Juz Amma Anak</h3>
-            <img src="assets/img/icon-juzamma.png" alt="Juz Amma" width="200px" class="rounded">
-            <div class="price-cta">
-              <strong class="free">Free</strong>
-              <p><a href='https://play.google.com/store/apps/details?id=com.diddu.juzamma&utm_source=website' target="_blank"><img alt='Get it on Google Play' width="200px" src='assets/img/en_badge_web_generic.png'/></a></p>
-            </div>
-          </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🆓</div>
+          <h3>Gratis Sepenuhnya</h3>
+          <p>Semua aplikasi kami tersedia secara gratis. Tidak ada biaya tersembunyi atau pembelian dalam aplikasi.</p>
         </div>
-        <div class="col-lg-4 mb-4 mb-lg-4">
-          <div class="pricing h-100 text-center">
-            <h3>Belajar Hijaiyah</h3>
-            <img src="assets/img/icon-hijaiyah.png" alt="Hijaiyah" width="200px" class="rounded">
-            <div class="price-cta">
-              <strong class="free">Free</strong>
-              <p><a href='https://play.google.com/store/apps/details?id=com.diddu.hijaiyah&utm_source=website' target="_blank"><img alt='Get it on Google Play' width="200px" src='assets/img/en_badge_web_generic.png'/></a></p>
-            </div>
-          </div>
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <h3>Aman untuk Anak</h3>
+          <p>Filter konten iklan kami memastikan iklan yang ditampilkan selalu sesuai untuk semua usia anak-anak.</p>
         </div>
-        <div class="col-lg-4 mb-4 mb-lg-4">
-          <div class="pricing h-100 text-center">
-            <h3>Surah Yasin & Doa</h3>
-            <img src="assets/img/icon-yasin.png" alt="Yasin" width="200px" class="rounded">
-            <div class="price-cta">
-              <strong class="free">Free</strong>
-              <p><a href='https://play.google.com/store/apps/details?id=com.diddu.yasin&utm_source=website' target="_blank"><img alt='Get it on Google Play' width="200px" src='assets/img/en_badge_web_generic.png'/></a></p>
-            </div>
-          </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎵</div>
+          <h3>Audio Berkualitas</h3>
+          <p>Suara dan musik dalam aplikasi kami jernih dan menyenangkan, mendukung proses hafalan dengan lebih mudah.</p>
         </div>
-      </div>
-      <div class="row align-items-stretch">
-
-        <div class="col-lg-4 mb-4 mb-lg-0">
-          <div class="pricing h-100 text-center">
-            <h3>Lagu Anak Islami</h3>
-            <img src="assets/img/icon-la-islami.png" alt="Lagu Anak Islami" width="200px" class="rounded">
-            <div class="price-cta">
-              <strong class="free">Free</strong>
-              <p><a href='https://play.google.com/store/apps/details?id=com.diddu.laguanakislami&utm_source=website' target="_blank"><img alt='Get it on Google Play' width="200px" src='assets/img/en_badge_web_generic.png'/></a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 mb-4 mb-lg-0">
-          <div class="pricing h-100 text-center">
-            <h3>Lagu Anak Indonesia</h3>
-            <img src="assets/img/icon-la-indonesia.png" alt="Lagu Anak Indonesia" width="200px" class="rounded">
-            <div class="price-cta">
-              <strong class="free">Free</strong>
-              <p><a href='https://play.google.com/store/apps/details?id=com.diddu.laguanakindonesia&utm_source=website' target="_blank"><img alt='Get it on Google Play' width="200px" src='assets/img/en_badge_web_generic.png'/></a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 mb-4 mb-lg-0">
-          <div class="pricing h-100 text-center">
-            <h3>Surah Al Kahfi & Doa</h3>
-            <img src="assets/img/icon-alkahfi.png" alt="Surah Al Kahfi" width="200px" class="rounded">
-            <div class="price-cta">
-              <strong class="free">Free</strong>
-              <p><a href='https://play.google.com/store/apps/details?id=com.diddu.alkahfi&utm_source=website' target="_blank"><img alt='Get it on Google Play' width="200px" src='assets/img/en_badge_web_generic.png'/></a></p>
-            </div>
-          </div>
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3>Mudah Digunakan</h3>
+          <p>Tampilan yang intuitif dan ramah anak, sehingga si kecil bisa belajar secara mandiri.</p>
         </div>
       </div>
     </div>
   </section>
 
-   <!-- ======= Testimonials Section ======= -->
-   <section class="section border-top border-bottom">
-    <div class="container">
-      <div class="row justify-content-center text-center mb-5">
-        <div class="col-md-4">
-          <h2 class="section-heading">Ulasan Dari Pengguna</h2>
-        </div>
-      </div>
-      <div class="row justify-content-center text-center">
-        <div class="col-md-7">
-
-          <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-            <div class="swiper-wrapper">
-
-              <div class="swiper-slide">
-                <div class="review text-center">
-                  <p class="stars">
-                    <span class="bi bi-star-fill"></span>
-                    <span class="bi bi-star-fill"></span>
-                    <span class="bi bi-star-fill"></span>
-                    <span class="bi bi-star-fill"></span>
-                    <span class="bi bi-star-fill"></span>
-                  </p>
-                  <h3>Excellent App!</h3>
-                  <blockquote>
-                    <p>Aplikasi yang sangat bagus untuk anak-anak menghafal Juz Amma ... Terima kasih sudah membuat aplikasi ini... Semoga bermanfaat</p>
-                  </blockquote>
-
-                  <p class="review-user">
-                    <img src="assets/img/person_1.jpeg" alt="Image" class="img-fluid rounded-circle mb-3">
-                    <span class="d-block">
-                      <span class="text-black">Adhiez Serdang10</span>, &mdash; App User
-                    </span>
-                  </p>
-
-                </div>
-              </div><!-- End testimonial item -->
-
-              <div class="swiper-slide">
-                <div class="review text-center">
-                  <p class="stars">
-                    <span class="bi bi-star-fill"></span>
-                    <span class="bi bi-star-fill"></span>
-                    <span class="bi bi-star-fill"></span>
-                    <span class="bi bi-star-fill"></span>
-                    <span class="bi bi-star-fill"></span>
-                  </p>
-                  <h3>This App is usefull!</h3>
-                  <blockquote>
-                    <p>Terima kasih. Anak saya jadi senang menghapal surat-surat, yang kemudian dia baca setiap salat</p>
-                  </blockquote>
-
-                  <p class="review-user">
-                    <img src="assets/img/person_2.jpeg" alt="Image" class="img-fluid rounded-circle mb-3">
-                    <span class="d-block">
-                      <span class="text-black">Lita S. Mahendra</span>, &mdash; App User
-                    </span>
-                  </p>
-
-                </div>
-              </div><!-- End testimonial item -->
-
-              <div class="swiper-slide">
-                <div class="review text-center">
-                  <p class="stars">
-                    <span class="bi bi-star-fill"></span>
-                    <span class="bi bi-star-fill"></span>
-                    <span class="bi bi-star-fill"></span>
-                    <span class="bi bi-star-fill"></span>
-                    <span class="bi bi-star-fill"></span>
-                  </p>
-                  <h3>Awesome Apps!</h3>
-                  <blockquote>
-                    <p>Very good apps. Suitable for all</p>
-                  </blockquote>
-
-                  <p class="review-user">
-                    <img src="assets/img/person_3.jpeg" alt="Image" class="img-fluid rounded-circle mb-3">
-                    <span class="d-block">
-                      <span class="text-black">Fadly Effandy</span>, &mdash; App User
-                    </span>
-                  </p>
-
-                </div>
-              </div><!-- End testimonial item -->
-
-            </div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
-      </div>
+  <!-- APPS -->
+  <section class="apps-section" id="apps">
+    <div class="section-header">
+      <div class="section-tag">Koleksi Aplikasi</div>
+      <h2>Daftar Aplikasi Kami</h2>
+      <p>Unduh gratis semua aplikasi edukasi kami langsung dari Google Play Store.</p>
     </div>
-  </section><!-- End Testimonials Section -->
+    <div class="apps-grid">
 
-  <!-- ======= Footer ======= -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4 mb-4 mb-md-0">
-          <h3 class="text-white">Tentang Diddu Studio</h3>
-          <p>Didirikan pada 2 Okt 2018 di Bintaro, Tangerang Selatan, Indonesia. Saat ini kami fokus membangun aplikasi edukasi di platform Android, dan kami juga berencana membangun game dengan konten edukasi.</p>
-          <p class="social">
-            <a href="https://facebook.com/diddu.studio/" target="_blank"><span class="bi bi-facebook"></span></a>
-            <a href="#"><span class="bi bi-instagram"></span></a>
-          </p>
-        </div>
-        <div class="col-md-7 ms-auto">
-          <div class="row site-section pt-0">
-            <div class="col-md-4 mb-4 mb-md-0">
-              <h3 class="text-white">Navigasi</h3>
-              <ul class="list-unstyled">
-                <li><a class="one" href="index.html">Halaman Utama</a></li>
-                <li><a class="one" href="privacy.html">Kebijakan Privasi</a></li>
-              </ul>
-            </div>
+      <div class="app-card">
+        <div class="app-card-top">
+          <div class="app-icon-wrap">
+            <img src="https://diddu.web.id/assets/img/icon-juzamma.png" alt="Ikon Juz Amma Anak" />
+          </div>
+          <div class="app-info">
+            <h3>Juz Amma Anak</h3>
+            <span class="app-badge">✓ Gratis</span>
           </div>
         </div>
+        <p class="app-desc">Aplikasi hafalan Juz Amma lengkap untuk anak-anak. Dilengkapi audio tilawah yang jernih, teks Arab, dan transliterasi untuk memudahkan hafalan.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.diddu.juzamma&utm_source=website" target="_blank" rel="noopener" class="app-play-btn">
+          <img src="https://diddu.web.id/assets/img/en_badge_web_generic.png" alt="Unduh di Google Play" />
+        </a>
       </div>
 
-      <div class="row justify-content-center text-center">
-        <div class="col-md-7">
-          <p class="copyright">Copyright &copy; by Diddu Studio. All Rights Reserved</p>
+      <div class="app-card">
+        <div class="app-card-top">
+          <div class="app-icon-wrap">
+            <img src="https://diddu.web.id/assets/img/icon-hijaiyah.png" alt="Ikon Belajar Hijaiyah" />
+          </div>
+          <div class="app-info">
+            <h3>Belajar Hijaiyah</h3>
+            <span class="app-badge">✓ Gratis</span>
+          </div>
         </div>
+        <p class="app-desc">Kenalkan huruf hijaiyah kepada anak-anak sejak dini dengan cara yang interaktif dan menyenangkan. Dilengkapi suara pengucapan yang tepat.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.diddu.hijaiyah&utm_source=website" target="_blank" rel="noopener" class="app-play-btn">
+          <img src="https://diddu.web.id/assets/img/en_badge_web_generic.png" alt="Unduh di Google Play" />
+        </a>
+      </div>
+
+      <div class="app-card">
+        <div class="app-card-top">
+          <div class="app-icon-wrap">
+            <img src="https://diddu.web.id/assets/img/icon-yasin.png" alt="Ikon Surah Yasin & Doa" />
+          </div>
+          <div class="app-info">
+            <h3>Surah Yasin &amp; Doa</h3>
+            <span class="app-badge">✓ Gratis</span>
+          </div>
+        </div>
+        <p class="app-desc">Baca dan hafal Surah Yasin beserta kumpulan doa sehari-hari. Tersedia teks Arab lengkap dengan terjemahan bahasa Indonesia.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.diddu.yasin&utm_source=website" target="_blank" rel="noopener" class="app-play-btn">
+          <img src="https://diddu.web.id/assets/img/en_badge_web_generic.png" alt="Unduh di Google Play" />
+        </a>
+      </div>
+
+      <div class="app-card">
+        <div class="app-card-top">
+          <div class="app-icon-wrap">
+            <img src="https://diddu.web.id/assets/img/icon-la-islami.png" alt="Ikon Lagu Anak Islami" />
+          </div>
+          <div class="app-info">
+            <h3>Lagu Anak Islami</h3>
+            <span class="app-badge">✓ Gratis</span>
+          </div>
+        </div>
+        <p class="app-desc">Koleksi lagu anak-anak bernuansa Islami yang menghibur sekaligus mendidik. Sempurna untuk menemani aktivitas harian si kecil.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.diddu.laguanakislami&utm_source=website" target="_blank" rel="noopener" class="app-play-btn">
+          <img src="https://diddu.web.id/assets/img/en_badge_web_generic.png" alt="Unduh di Google Play" />
+        </a>
+      </div>
+
+      <div class="app-card">
+        <div class="app-card-top">
+          <div class="app-icon-wrap">
+            <img src="https://diddu.web.id/assets/img/icon-la-indonesia.png" alt="Ikon Lagu Anak Indonesia" />
+          </div>
+          <div class="app-info">
+            <h3>Lagu Anak Indonesia</h3>
+            <span class="app-badge">✓ Gratis</span>
+          </div>
+        </div>
+        <p class="app-desc">Kumpulan lagu anak-anak Indonesia yang klasik dan populer. Bantu anak mengenal budaya Indonesia sambil bersenang-senang.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.diddu.laguanakindonesia&utm_source=website" target="_blank" rel="noopener" class="app-play-btn">
+          <img src="https://diddu.web.id/assets/img/en_badge_web_generic.png" alt="Unduh di Google Play" />
+        </a>
+      </div>
+
+      <div class="app-card">
+        <div class="app-card-top">
+          <div class="app-icon-wrap">
+            <img src="https://diddu.web.id/assets/img/icon-alkahfi.png" alt="Ikon Surah Al Kahfi & Doa" />
+          </div>
+          <div class="app-info">
+            <h3>Surah Al Kahfi &amp; Doa</h3>
+            <span class="app-badge">✓ Gratis</span>
+          </div>
+        </div>
+        <p class="app-desc">Baca Surah Al Kahfi setiap hari Jumat dengan mudah. Dilengkapi dengan kumpulan doa-doa pilihan beserta terjemahannya.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.diddu.alkahfi&utm_source=website" target="_blank" rel="noopener" class="app-play-btn">
+          <img src="https://diddu.web.id/assets/img/en_badge_web_generic.png" alt="Unduh di Google Play" />
+        </a>
       </div>
 
     </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews-section">
+    <div class="section-header">
+      <div class="section-tag">Ulasan Pengguna</div>
+      <h2>Apa Kata Mereka?</h2>
+      <p>Ribuan orang tua mempercayai aplikasi Diddu Studio untuk pendidikan anak-anak mereka.</p>
+    </div>
+    <div class="reviews-grid">
+
+      <div class="review-card">
+        <div class="review-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <div class="review-quote-mark">"</div>
+        <blockquote>Aplikasi yang sangat bagus untuk anak-anak menghafal Juz Amma. Terima kasih sudah membuat aplikasi ini. Semoga bermanfaat bagi kita semua.</blockquote>
+        <div class="review-author">
+          <img src="https://diddu.web.id/assets/img/person_1.jpeg" alt="Adhiez Serdang10" />
+          <div class="review-author-info">
+            <strong>Adhiez Serdang10</strong>
+            <span>Pengguna Aplikasi</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <div class="review-quote-mark">"</div>
+        <blockquote>Terima kasih. Anak saya jadi senang menghafal surat-surat, yang kemudian dia baca setiap salat. Sangat bermanfaat sekali!</blockquote>
+        <div class="review-author">
+          <img src="https://diddu.web.id/assets/img/person_2.jpeg" alt="Lita S. Mahendra" />
+          <div class="review-author-info">
+            <strong>Lita S. Mahendra</strong>
+            <span>Pengguna Aplikasi</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <div class="review-quote-mark">"</div>
+        <blockquote>Aplikasi yang sangat bagus dan cocok untuk semua kalangan. Desainnya menarik dan mudah digunakan oleh anak-anak.</blockquote>
+        <div class="review-author">
+          <img src="https://diddu.web.id/assets/img/person_3.jpeg" alt="Fadly Effandy" />
+          <div class="review-author-info">
+            <strong>Fadly Effandy</strong>
+            <span>Pengguna Aplikasi</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-section">
+    <div class="about-inner">
+      <div class="section-tag">Tentang Kami</div>
+      <h2>Diddu Studio</h2>
+      <p>Didirikan pada 2 Oktober 2018 di Bintaro, Tangerang Selatan, Indonesia, Diddu Studio hadir dengan misi sederhana: membuat pendidikan Islam lebih mudah dan menyenangkan bagi anak-anak Indonesia.</p>
+      <p>Saat ini kami fokus membangun aplikasi edukasi berkualitas tinggi di platform Android. Ke depannya, kami juga berencana menghadirkan game edukatif yang menggabungkan kesenangan bermain dengan nilai-nilai Islami.</p>
+      <div class="about-links">
+        <a href="https://facebook.com/diddu.studio/" target="_blank" rel="noopener" class="about-fb">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          Facebook Kami
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2024 Diddu Studio. All Rights Reserved.</p>
+    <nav class="footer-nav">
+      <a href="index.html">Beranda</a>
+      <a href="privacy.html">Kebijakan Privasi</a>
+      <a href="en/index.html">English</a>
+    </nav>
   </footer>
-  <!--end footer-->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
 
 </body>
-
 </html>

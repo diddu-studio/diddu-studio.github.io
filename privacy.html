@@ -1,175 +1,558 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="id">
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Kebijakan Privasi Diddu Studio — Informasi mengenai pengumpulan data, keamanan informasi, iklan, dan konten aplikasi kami." />
+  <meta name="keywords" content="Diddu Studio, Kebijakan Privasi, Privacy Policy" />
+  <title>Kebijakan Privasi — Diddu Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --emerald: #0d6e4f;
+      --emerald-light: #15a06e;
+      --emerald-pale: #e8f7f1;
+      --gold: #c8922a;
+      --gold-light: #f0b84a;
+      --cream: #faf8f3;
+      --ink: #1a1a1a;
+      --ink-soft: #4a4a4a;
+      --ink-muted: #8a8a8a;
+      --white: #ffffff;
+    }
 
-  <title>Diddu Studio</title>
-  <meta content="Kumpulan aplikasi edukasi gratis. Untuk mengunduh, kunjungi website ini" name="description">
-  <meta content="Diddu Studio, Aplikasi Edukasi Gratis" name="keywords">
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 90% -10%, rgba(13,110,79,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at -10% 80%, rgba(200,146,42,0.05) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.3.1/css/flag-icon.min.css" rel="stylesheet"/>
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250,248,243,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(13,110,79,0.12);
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KKJCT0T0CN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
 
-  gtag('config', 'G-KKJCT0T0CN');
-</script>
+    .nav-brand-icon {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--emerald), var(--emerald-light));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Amiri', serif;
+      color: white;
+      font-size: 18px;
+      font-weight: 700;
+      box-shadow: 0 2px 8px rgba(13,110,79,0.3);
+    }
+
+    .nav-brand-text {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -0.3px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink-soft);
+      padding: 6px 14px;
+      border-radius: 20px;
+      transition: all 0.2s;
+    }
+
+    .nav-links a:hover { background: var(--emerald-pale); color: var(--emerald); }
+
+    .lang-toggle {
+      background: var(--emerald) !important;
+      color: white !important;
+      font-weight: 600 !important;
+    }
+
+    .lang-toggle:hover { background: var(--emerald-light) !important; color: white !important; }
+
+    /* PAGE HEADER */
+    .page-header {
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(135deg, var(--emerald) 0%, #0a5440 100%);
+      padding: 70px 5% 60px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .page-header::before {
+      content: 'Privacy';
+      position: absolute;
+      font-family: 'Amiri', serif;
+      font-size: 180px;
+      color: rgba(255,255,255,0.04);
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    .page-header-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 12px;
+    }
+
+    .page-header h1 {
+      font-family: 'Amiri', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: white;
+      margin-bottom: 16px;
+    }
+
+    .page-header p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.78);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* BREADCRUMB */
+    .breadcrumb {
+      position: relative;
+      z-index: 1;
+      padding: 16px 5%;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb a {
+      color: var(--emerald);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    .breadcrumb span {
+      color: var(--ink-muted);
+      font-size: 13px;
+    }
+
+    /* CONTENT */
+    .privacy-content {
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 20px 5% 80px;
+    }
+
+    /* TOC */
+    .toc {
+      background: white;
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 48px;
+      box-shadow: 0 2px 16px rgba(13,110,79,0.08);
+      border: 1px solid rgba(13,110,79,0.1);
+    }
+
+    .toc h3 {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--emerald);
+      margin-bottom: 16px;
+    }
+
+    .toc ol {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      counter-reset: toc;
+    }
+
+    .toc ol li {
+      counter-increment: toc;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .toc ol li::before {
+      content: counter(toc, decimal-leading-zero);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--emerald);
+      background: var(--emerald-pale);
+      padding: 3px 8px;
+      border-radius: 6px;
+      min-width: 34px;
+      text-align: center;
+    }
+
+    .toc ol li a {
+      color: var(--ink-soft);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .toc ol li a:hover { color: var(--emerald); }
+
+    /* POLICY SECTION */
+    .policy-section {
+      margin-bottom: 44px;
+      scroll-margin-top: 80px;
+    }
+
+    .policy-section-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .policy-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--emerald), var(--emerald-light));
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(13,110,79,0.25);
+    }
+
+    .policy-section h2 {
+      font-family: 'Amiri', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--ink);
+      padding-top: 6px;
+    }
+
+    .policy-body {
+      background: white;
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .policy-body p {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--ink-soft);
+      margin-bottom: 14px;
+    }
+
+    .policy-body p:last-child { margin-bottom: 0; }
+
+    .policy-body ul {
+      margin: 12px 0 12px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .policy-body ul li {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--ink-soft);
+      position: relative;
+    }
+
+    .policy-body ul li::marker { color: var(--emerald); }
+
+    .policy-highlight {
+      background: var(--emerald-pale);
+      border-left: 4px solid var(--emerald);
+      border-radius: 0 12px 12px 0;
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 14px;
+      color: var(--emerald);
+      font-weight: 500;
+    }
+
+    /* CONTACT */
+    .contact-section {
+      background: linear-gradient(135deg, var(--emerald), var(--emerald-light));
+      border-radius: 20px;
+      padding: 36px;
+      text-align: center;
+      margin-top: 48px;
+    }
+
+    .contact-section h3 {
+      font-family: 'Amiri', serif;
+      font-size: 1.5rem;
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .contact-section p {
+      color: rgba(255,255,255,0.82);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .contact-section a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: white;
+      color: var(--emerald);
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 700;
+      transition: all 0.2s;
+    }
+
+    .contact-section a:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.15); }
+
+    /* FOOTER */
+    footer {
+      position: relative;
+      z-index: 1;
+      background: var(--ink);
+      color: rgba(255,255,255,0.7);
+      padding: 40px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    footer p { font-size: 13px; }
+
+    .footer-nav {
+      background: rgba(20, 20, 20, 0.25);
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-nav a {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      font-size: 13px;
+      transition: color 0.2s;
+    }
+
+    .footer-nav a:hover { color: var(--gold-light); }
+
+    @media (max-width: 600px) {
+      footer { flex-direction: column; text-align: center; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .policy-section { animation: fadeUp 0.5s ease both; }
+    .policy-section:nth-child(1) { animation-delay: 0.1s; }
+    .policy-section:nth-child(2) { animation-delay: 0.2s; }
+    .policy-section:nth-child(3) { animation-delay: 0.3s; }
+    .policy-section:nth-child(4) { animation-delay: 0.4s; }
+  </style>
 </head>
-
 <body>
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex">
-    <div class="container">
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="p-2" style="visibility: hidden;"><span class="language">EN&nbsp;</span></a><i class="flag-icon flag-icon-us"></i></div>
-        <div class="p-2">
-          <div class="logo">
-            <h1><a href="index.html">Diddu Studio</a></h1>
-          </div>
+  <nav>
+    <a href="../index.html" class="nav-brand">
+      <div class="nav-brand-icon">د</div>
+      <span class="nav-brand-text">Diddu Studio</span>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html">Beranda</a>
+      <a href="../en/privacy.html" class="lang-toggle">EN</a>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="page-header-tag">Dokumen Resmi</div>
+    <h1>Kebijakan Privasi</h1>
+    <p>Kami berkomitmen untuk melindungi privasi pengguna kami, terutama privasi anak-anak. Halaman ini menjelaskan bagaimana kami menangani data Anda.</p>
+  </div>
+
+  <div class="breadcrumb">
+    <a href="index.html">Beranda</a>
+    <span>›</span>
+    <span>Kebijakan Privasi</span>
+  </div>
+
+  <main class="privacy-content">
+
+    <div class="toc">
+      <h3>Daftar Isi</h3>
+      <ol>
+        <li><a href="#informasi">Pembacaan Informasi</a></li>
+        <li><a href="#keamanan">Keamanan Informasi</a></li>
+        <li><a href="#iklan">Iklan</a></li>
+        <li><a href="#konten">Konten</a></li>
+      </ol>
+    </div>
+
+    <div class="policy-section" id="informasi">
+      <div class="policy-section-header">
+        <div class="policy-icon">📡</div>
+        <h2>Pembacaan Informasi</h2>
+      </div>
+      <div class="policy-body">
+        <p>Untuk memberikan pengalaman pengguna yang lebih baik saat menggunakan aplikasi kami, aplikasi kami perlu mengakses beberapa izin perangkat tertentu.</p>
+        <div class="policy-highlight">
+          Kami hanya meminta izin yang benar-benar diperlukan untuk fungsi aplikasi, tidak lebih.
         </div>
-        <div class="p-2">
-          <a class="one" href="en/privacy.html"><span class="language">EN&nbsp;</span><i class="flag-icon flag-icon-us"></i></a>
+        <p>Izin yang mungkin diminta oleh aplikasi kami meliputi:</p>
+        <ul>
+          <li><strong>Akses Internet:</strong> Digunakan untuk memuat iklan dan memastikan konten terbaru tersedia.</li>
+          <li><strong>Penyimpanan Internal:</strong> Beberapa aplikasi memerlukan izin ini untuk menyimpan data lokal demi performa yang lebih baik.</li>
+          <li><strong>Rekaman Audio:</strong> Hanya untuk aplikasi yang memiliki fitur perekaman suara. Aplikasi lain tidak memerlukan izin ini.</li>
+        </ul>
+        <p>Perlu dicatat bahwa tidak semua aplikasi memerlukan semua izin di atas. Setiap aplikasi hanya meminta izin yang relevan dengan fungsinya.</p>
+      </div>
+    </div>
+
+    <div class="policy-section" id="keamanan">
+      <div class="policy-section-header">
+        <div class="policy-icon">🔒</div>
+        <h2>Keamanan Informasi</h2>
+      </div>
+      <div class="policy-body">
+        <p>Keamanan data pengguna adalah prioritas utama kami. Kami menerapkan beberapa prinsip ketat dalam penanganan data:</p>
+        <ul>
+          <li>Koneksi internet hanya digunakan untuk memuat iklan — tidak ada data pengguna yang dikirimkan melalui jaringan.</li>
+          <li>Data yang tersimpan di perangkat pengguna digunakan semata-mata untuk kebutuhan fungsional aplikasi.</li>
+          <li>Kami <strong>tidak pernah</strong> mengirimkan data pengguna ke pihak ketiga manapun.</li>
+          <li>Kami menjamin bahwa tidak ada penulisan data yang tidak berhubungan dengan fungsi aplikasi.</li>
+        </ul>
+        <div class="policy-highlight">
+          Privasi data Anda dan anak Anda aman bersama kami. Kami tidak menjual, menyewakan, atau membagikan data pribadi kepada siapapun.
         </div>
       </div>
     </div>
-  </header>
-  <!--End Header-->
 
-  <main id="main">
-
-    <!-- ======= Features Section ======= -->
-
-    <section class="hero-section inner-page">
-      <div class="wave">
-
-        <svg width="1920px" height="265px" viewBox="0 0 1920 265" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-            <g id="Apple-TV" transform="translate(0.000000, -402.000000)" fill="#FFFFFF">
-              <path d="M0,439.134243 C175.04074,464.89273 327.944386,477.771974 458.710937,477.771974 C654.860765,477.771974 870.645295,442.632362 1205.9828,410.192501 C1429.54114,388.565926 1667.54687,411.092417 1920,477.771974 L1920,667 L1017.15166,667 L0,667 L0,439.134243 Z" id="Path"></path>
-            </g>
-          </g>
-        </svg>
-
+    <div class="policy-section" id="iklan">
+      <div class="policy-section-header">
+        <div class="policy-icon">📢</div>
+        <h2>Iklan</h2>
       </div>
-
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-12">
-            <div class="row justify-content-center">
-              <div class="col-md-7 text-center hero-text">
-                <h1 data-aos="fade-up" data-aos-delay="">Kebijakan Privasi</h1>
-                <p class="mb-5" data-aos="fade-up" data-aos-delay="100">Halaman ini digunakan untuk menginformasikan pengguna mengenai kebijakan privasi kami, jika ada yang memutuskan untuk menggunakan aplikasi ini.</p>
-              </div>
-            </div>
-          </div>
+      <div class="policy-body">
+        <p>Semua produk kami tersedia gratis untuk diunduh dan dipasang. Untuk mempertahankan layanan gratis ini, aplikasi kami menampilkan iklan.</p>
+        <p>Kami sangat peduli dengan keamanan konten untuk anak-anak. Oleh karena itu, kami menerapkan filter konten iklan yang ketat:</p>
+        <ul>
+          <li>Semua iklan yang ditampilkan telah melalui proses pemfilteran untuk memastikan kesesuaiannya dengan semua usia anak-anak.</li>
+          <li>Iklan yang berisi konten dewasa, kekerasan, atau yang tidak sesuai untuk anak-anak secara otomatis diblokir.</li>
+          <li>Kami bekerja sama dengan jaringan iklan yang memiliki standar perlindungan anak yang tinggi.</li>
+        </ul>
+        <div class="policy-highlight">
+          Dengan mengunduh dan menggunakan aplikasi kami, pengguna menyetujui tampilnya iklan yang telah difilter dan disesuaikan untuk anak-anak.
         </div>
       </div>
-
-    </section>
-
-    <section class="section pb-0" style="padding-top: 20px;">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-12">
-            <h2 class="mb-4">Pembacaan Informasi</h2>
-            <p class="mb-4">Untuk pengalaman pengguna yang lebih baik saat menggunakan aplikasi kami, aplikasi perlu membaca "INFORMASI STATUS INTERNET" untuk menampilkan iklan.
-              Beberapa aplikasi mungkin memerlukan izin seperti "PENYIMPANAN DATA INTERNAL" dan "RECORD AUDIO" agar aplikasi yang memiliki fungsi untuk merekam audio dapat bekerja dengan baik. Aplikasi lain mungkin tidak perlu menggunakan izin ini.</p>
-          </div>
-        </div>
-
-        <div class="row align-items-center">
-          <div class="col-md-12">
-            <h2 class="mb-4">Keamanan Informasi</h2>
-            <p class="mb-4">Aplikasi ini hanya menggunakan koneksi internet untuk memuat iklan. Oleh karena itu, seharusnya tidak mengganggu privasi data pengguna.
-              Data yang disimpan di penyimpanan internal digunakan hanya untuk kebutuhan aplikasi, kami tidak pernah mengirimkannya ke pihak ketiga mana pun. Kami juga menjamin bahwa kami tidak menulis apa pun yang tidak ada hubungannya dengan aplikasi.</p>
-          </div>
-        </div>
-
-        <div class="row align-items-center">
-          <div class="col-md-12">
-            <h2 class="mb-4">Iklan</h2>
-            <p class="mb-4">Produk kami gratis untuk diunduh dan dipasang, namun pengguna harus menerima iklan yang ditampilkan di aplikasi kami. Untuk menampilkan iklan yang cocok untuk anak-anak, kami menerapkan filter konten iklan, sehingga iklan cocok untuk semua usia anak-anak.</p>
-          </div>
-        </div>
-
-        <div class="row align-items-center">
-          <div class="col-md-12">
-            <h2 class="mb-4">Konten</h2>
-            <p class="mb-4">Semua konten, termasuk namun tidak terbatas pada audio, animasi, gambar dan desain dilindungi oleh hukum. Pengguna dan pihak lain dilarang menggunakan kembali tanpa izin dari Diddu Studio.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main><!-- End #main -->
-
-   <!-- ======= Footer ======= -->
-   <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4 mb-4 mb-md-0">
-          <h3 class="text-white">Tentang Diddu Studio</h3>
-          <p>Didirikan pada 2 Okt 2018 di Bintaro, Tangerang Selatan, Indonesia. Saat ini kami fokus membangun aplikasi edukasi di platform Android, dan kami juga berencana membangun game dengan konten edukasi.</p>
-          <p class="social">
-            <a href="https://facebook.com/diddu.studio/" target="_blank"><span class="bi bi-facebook"></span></a>
-            <a href="#"><span class="bi bi-instagram"></span></a>
-          </p>
-        </div>
-        <div class="col-md-7 ms-auto">
-          <div class="row site-section pt-0">
-            <div class="col-md-4 mb-4 mb-md-0">
-              <h3 class="text-white">Navigasi</h3>
-              <ul class="list-unstyled">
-                <li><a class="one" href="index.html">Halaman Utama</a></li>
-                <li><a class="one" href="privacy.html">Kebijakan Privasi</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row justify-content-center text-center">
-        <div class="col-md-7">
-          <p class="copyright">Copyright &copy; by Diddu Studio. All Rights Reserved</p>
-        </div>
-      </div>
-
     </div>
+
+    <div class="policy-section" id="konten">
+      <div class="policy-section-header">
+        <div class="policy-icon">©</div>
+        <h2>Konten</h2>
+      </div>
+      <div class="policy-body">
+        <p>Seluruh konten dalam aplikasi Diddu Studio, termasuk namun tidak terbatas pada:</p>
+        <ul>
+          <li>Audio dan rekaman tilawah</li>
+          <li>Animasi dan ilustrasi</li>
+          <li>Gambar dan aset visual</li>
+          <li>Desain antarmuka pengguna</li>
+          <li>Teks dan terjemahan</li>
+        </ul>
+        <p>— semuanya dilindungi oleh hak cipta dan hukum yang berlaku.</p>
+        <div class="policy-highlight">
+          Pengguna dan pihak manapun dilarang menggunakan kembali, menyalin, mendistribusikan, atau memodifikasi konten kami tanpa izin tertulis resmi dari Diddu Studio.
+        </div>
+        <p>Untuk pertanyaan mengenai lisensi atau penggunaan konten, silakan hubungi kami melalui halaman Facebook resmi kami.</p>
+      </div>
+    </div>
+
+    <div class="contact-section">
+      <h3>Ada Pertanyaan?</h3>
+      <p>Jika Anda memiliki pertanyaan mengenai kebijakan privasi kami, jangan ragu untuk menghubungi kami.</p>
+      <a href="https://facebook.com/diddu.studio/" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        Hubungi Kami di Facebook
+      </a>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© 2024 Diddu Studio. All Rights Reserved.</p>
+    <nav class="footer-nav">
+      <a href="index.html">Beranda</a>
+      <a href="privacy.html">Kebijakan Privasi</a>
+      <a href="en/privacy.html">English</a>
+    </nav>
   </footer>
-  <!--end footer-->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
 
 </body>
-
 </html>
